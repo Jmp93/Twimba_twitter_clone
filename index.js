@@ -58,8 +58,11 @@ function handleRetweetClick(tweetId) {
 }
 
 function handleDeleteClick(tweetId) {
-  const targetIndex = tweetsData.findIndex(tweet => tweet.uuid === tweetId);
-  tweetsData.splice(targetIndex, 1);
+  // const targetIndex = tweetsData.findIndex(tweet => tweet.uuid === tweetId);
+  // tweetsData.splice(targetIndex, 1);
+  // saveToLocalStorage();
+  // render();
+  tweetsData = tweetsData.filter(tweet => tweet.uuid !== tweetId);
   saveToLocalStorage();
   render();
 }
